@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2001 Space Odyssey </title>
+    <meta name="description" content="3d.io Showcase: 2001 Space Odyssey">
+    <!-- A-Frame Libraries -->
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@3.2.5/dist/aframe-animation-component.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div id="borderAll"></div>
+    <div id="2001SpaceOdysseyEmbedded">
+      <!-- Nav Buttons -->
+      <button id="up" class="btn-all up">UP</button>
+      <button id="down" class="btn-all down">DOWN</button>
+      <button id="leftRot" class="btn-rot left">left</button>
+      <button id="rightRot"class="btn-rot right">right</button>
+      <!-- Aframe -->
+      <a-scene embedded cursor="rayOrigin: mouse" vr-mode-ui="enabled: false" >
+        <!-- Iso Camera -->
+        <a-entity
+          id="camera"
+          camera="fov:0.1; zoom: 0.01; near: 20"
+          position="-65 65 -65"
+          rotation="-35 225 0"
+          wasd-controls="acceleration:8;easing:5;"s
+          look-controls="enabled:false">
+        </a-entity>
+        <!-- Assets-->
+        <a-assets>
+          <!-- Floors Models -->
+          <a-asset-item id="floor"        src="obj/floor.obj">          </a-asset-item>
+          <a-asset-item id="floorLights"  src="obj/floorLights.obj">    </a-asset-item>
+          <a-asset-item id="wallSmall"    src="obj/wallSmall.obj">      </a-asset-item>
+          <a-asset-item id="wallDetailed" src="obj/wallDetailed.obj">   </a-asset-item>
+          <a-asset-item id="moulding"     src="obj/moulding.obj">       </a-asset-item>
+          <a-asset-item id="door"         src="obj/door.obj">           </a-asset-item>
+          <a-asset-item id="topSectionLow"src="obj/topSectionLow.obj">  </a-asset-item>
+          <a-asset-item id="topSectionHigh"src="obj/topSectionHigh.obj"></a-asset-item>
+          <a-asset-item id="wallsWire"    src="obj/wallsWire.obj">      </a-asset-item>
+          <a-asset-item id="tableWire"    src="obj/tableWire.obj">      </a-asset-item>
+          <a-asset-item id="furniture"    src="obj/furniture.obj">      </a-asset-item>
+          <a-asset-item id="macbookPro"   src="obj/macbookPro.obj">     </a-asset-item>
+        </a-assets>
+
+        <!-- Floor Geometry -->
+        <a-entity id="tower" position="0 0 0">
+          <a-entity id="level2" position="-1 0 -1" rotation="0 180 0">
+            <a-obj-model src="#floor"         color="gray"    scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#floorLights"   color="white"   scale=".01 .01 .01" ></a-obj-model>
+            <a-obj-model src="#wallDetailed"  color="white"   scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#furniture"     color="#9fa960" scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#moulding"      color="#606060" scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#door"          color="#606060" scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#topSectionHigh"color="white"   scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#macbookPro"    color="grey"    scale=".01 .01 .01"></a-obj-model>
+          </a-entity>
+
+          <a-entity id="level2" position="-1 -30 -1" rotation="0 180 0">
+            <a-obj-model src="#floor"         color="gray"    scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#floorLights"   color="white"   scale=".01 .01 .01" ></a-obj-model>
+            <a-obj-model src="#wallDetailed"  color="white"   scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#moulding"      color="#606060" scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#door"          color="#606060" scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#macbookPro"    color="grey"    scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#topSectionHigh"color="white"   scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#tableWire"     color="black"   scale=".01 .01 .01" material="wireframe: true; wireframeLinewidth: 6"></a-obj-model>
+          </a-entity>
+
+          <a-entity id="level1" position="-1 -60 -1" rotation="0 180 0">
+            <a-obj-model src="#floor"         color="gray"    scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#floorLights"   color="white"   scale=".01 .01 .01" ></a-obj-model>
+            <a-obj-model src="#topSectionLow" color="#9fa960"   scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#wallSmall"     color="white"   scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#macbookPro"    color="grey"    scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#wallsWire"     color="black"   scale=".01 .01 .01" material="wireframe: true"></a-obj-model>
+            <a-obj-model src="#tableWire"     color="black"   scale=".01 .01 .01" material="wireframe: true"></a-obj-model>
+          </a-entity>
+        </a-entity>
+        <!-- Sky -->
+        <a-sky color="#2b2a2f"></a-sky>
+      </a-scene>
+    </div>
+
+    <script>
+      const btns = document.querySelectorAll('.btn-all')
+      const towerEl = document.querySelector('#tower')
+
+      const levels = [
+        {lvl: 'lvl1', y: 0},
+        {lvl: 'lvl2', y: 30},
+        {lvl: 'lvl3', y: 60},
+      ]
+      let level = 0
+      const lMin = 0
+      const lMax = levels.length - 1
+      //initial movement
+      move(0)
+      //bindings
+      btns.forEach(btn => {
+        btn.addEventListener('click', function(evt) {
+          console.log(evt.target.id)
+          delta = evt.target.id === 'up' ? -1 : 1
+          move(delta)
+        })
+      })
+
+      function move(delta){
+          const yOld = levels[level].y
+          //prevent moving out of the scope
+          if (level + delta > lMax || level + delta < lMin) return
+          level += delta
+          const yNew = levels[level].y
+          //move everything
+          const moveParams = `property: position; from:0 ${yOld} 0; to: 0 ${yNew} 0; dur: 3000; easing: easeInOutQuad`
+          towerEl.removeAttribute('animation')
+          towerEl.setAttribute('animation', moveParams)
+      }
+    </script>
+
+
+  </body>
+</html>

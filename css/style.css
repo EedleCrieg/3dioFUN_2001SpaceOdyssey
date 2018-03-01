@@ -1,0 +1,78 @@
+/*3d.io 2001 Space Odyssey Style */
+a-scene{
+  width: 75vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+}
+/* Page Styling */
+body{
+  background-color: #2b2a2f;
+  margin: 0px;
+}
+#borderAll{
+  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  border-style: solid;
+  border-color: white;
+  border-width: 10px;
+  z-index: 1;
+}
+/* buttons */
+.btn-all{
+  width: 100px;
+  height: 50px;
+  /*border-radius: 25px;*/
+  border-style: solid;
+  border-width: 0;
+  background-color: #e5e5e5;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  z-index: 1;
+}
+.btn-all.up{
+  position: fixed;
+  left: 300px;
+  top: 250px;
+  bottom: auto
+}
+.btn-all.down{
+  position: fixed;
+  right: 30px;
+  top: 250px;
+  bottom: auto;
+}
+
+.btn-rot{
+  width: 100px;
+  height: 50px;
+  /*border-radius: 25px;*/
+  border-style: solid;
+  border-width: 0;
+  background-color: red;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.btn-rot.left{
+  position: fixed;
+  left: 300px;
+  top: 350px;
+  bottom: auto;
+}
+
+.btn-rot.right{
+  position: fixed;
+  right: 30px;
+  top: 350px;
+  bottom: auto;
+}

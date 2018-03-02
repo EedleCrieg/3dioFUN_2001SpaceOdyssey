@@ -7,16 +7,19 @@
     <!-- A-Frame Libraries -->
     <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@3.2.5/dist/aframe-animation-component.min.js"></script>
+    <script src="https://dist.3d.io/3dio-js/1.1.x/3dio.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
     <div id="borderAll"></div>
+
     <div id="2001SpaceOdysseyEmbedded">
       <!-- Nav Buttons -->
-      <button id="up" class="btn-all up">UP</button>
-      <button id="down" class="btn-all down">DOWN</button>
-      <button id="leftRot" class="btn-rot left">left</button>
-      <button id="rightRot"class="btn-rot right">right</button>
+      <div id="navButtonDiv">
+        <button id="up" class="btn-all up">UP</button>
+        <button id="down" class="btn-all down">DN</button>
+        <button id="rotate" class="btn-rot">RT</button>
+      </div>
       <!-- Aframe -->
       <a-scene embedded cursor="rayOrigin: mouse" vr-mode-ui="enabled: false" >
         <!-- Iso Camera -->
@@ -47,7 +50,7 @@
 
         <!-- Floor Geometry -->
         <a-entity id="tower" position="0 0 0">
-          <a-entity id="level2" position="-1 0 -1" rotation="0 180 0">
+          <a-entity id="level2" position="-1 -60 -1" rotation="0 180 0">
             <a-obj-model src="#floor"         color="gray"    scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#floorLights"   color="white"   scale=".01 .01 .01" ></a-obj-model>
             <a-obj-model src="#wallDetailed"  color="white"   scale=".01 .01 .01"></a-obj-model>
@@ -65,27 +68,28 @@
             <a-obj-model src="#moulding"      color="#606060" scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#door"          color="#606060" scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#macbookPro"    color="grey"    scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#topSectionHigh"color="white"   scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#tableWire"     color="black"   scale=".01 .01 .01" material="wireframe: true; wireframeLinewidth: 6"></a-obj-model>
+            <a-obj-model src="#topSectionHigh"color="black"   scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#tableWire"     color="#10109f"   scale=".01 .01 .01" material="wireframe: true; wireframeLinewidth: 6"></a-obj-model>
           </a-entity>
 
-          <a-entity id="level1" position="-1 -60 -1" rotation="0 180 0">
+          <a-entity id="level1" position="-1 0 -1" rotation="0 180 0">
             <a-obj-model src="#floor"         color="gray"    scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#floorLights"   color="white"   scale=".01 .01 .01" ></a-obj-model>
-            <a-obj-model src="#topSectionLow" color="#9fa960"   scale=".01 .01 .01"></a-obj-model>
+            <a-obj-model src="#topSectionLow" color="black"   scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#wallSmall"     color="white"   scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#macbookPro"    color="grey"    scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#wallsWire"     color="black"   scale=".01 .01 .01" material="wireframe: true"></a-obj-model>
-            <a-obj-model src="#tableWire"     color="black"   scale=".01 .01 .01" material="wireframe: true"></a-obj-model>
+            <a-obj-model src="#wallsWire"     color="#10109f"   scale=".01 .01 .01" material="wireframe: true"></a-obj-model>
+            <a-obj-model src="#tableWire"     color="#10109f"   scale=".01 .01 .01" material="wireframe: true"></a-obj-model>
           </a-entity>
         </a-entity>
         <!-- Sky -->
-        <a-sky color="#2b2a2f"></a-sky>
+        <a-sky color="#0f1110"></a-sky>
       </a-scene>
     </div>
 
     <script>
       const btns = document.querySelectorAll('.btn-all')
+      const rotBtn = document.querySelector('.btn-rot')
       const towerEl = document.querySelector('#tower')
 
       const levels = [

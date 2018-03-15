@@ -27,9 +27,36 @@
 </head>
 
 <body class="body">
-
-  <!-- Navigation -->
+  <div id="borderAll"></div>
   <div class="maindiv">
+    <div class="_2001spaceodysseycopydiv">
+      <div class="copyalldiv">
+        <div class="titlediv">
+          <div class="_3diotext">3d.io Presents</div>
+          <div class="projecttitletext">2001: A <span class="text-span"><em xmlns="http://www.w3.org/1999/xhtml">Space</em></span> Odyssey</div>
+        </div>
+        <div class="infocopyalldiv">
+          <div class="copytopdiv">
+            <div class="text-block-2">Stage your spaces on 3d.io for free!</div>
+          </div>
+          <div class="copymiddiv">
+            <div class="moveupcopy">
+              <div class="text-block-3">UPLOAD YOUR PLAN TO 3D.IO AND WE TAKE CARE OF THE REST!</div>
+              <div class="copygap"></div>
+              <div class="text-block-3">OUR PROPRIETARY ALGORITHM WILL BUILD YOUR WALLS, DOORS, AND WINDOWS</div>
+              <div class="copygap"></div>
+              <div class="text-block-3">QUICKLY FURNISH YOUR SPACE WITH OUR  GROWING FURNITURE LIBRARY</div>
+              <div class="copygap"></div>
+              <div class="text-block-3">DOWNLOAD YOUR MODEL OR EASILY SHOWCASE AND SHARE ON 3D.IO!</div>
+              <div class="copygap"></div>
+            </div>
+          </div>
+          <div class="copybottomdiv">
+            <div class="text-block-4">Take Me There</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="aframe w-clearfix">
       <!-- Aframe -->
       <a-scene embedded cursor="rayOrigin: mouse" vr-mode-ui="enabled: false" >
@@ -64,6 +91,8 @@
           <a-asset-item id="planFloor"    src="obj/planfloor.obj"></a-asset-item>
           <a-asset-item id="planTex"src="images/plantex.png"></a-aset-item>
 
+          <a-asset-item id="furnitureGLTF" src="obj/furniture.glb"></a-asset-item>
+
         </a-assets>
 
         <!-- Floor Geometry -->
@@ -72,7 +101,8 @@
             <a-obj-model src="#floor"         color="gray"    scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#floorLights"   color="white"   scale=".01 .01 .01" ></a-obj-model>
             <a-obj-model src="#wallDetailed"  color="white"   scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#furniture"     color="#9fa960" scale=".01 .01 .01"></a-obj-model>
+            <!--<a-obj-model src="#furniture"     color="#9fa960" scale=".01 .01 .01"></a-obj-model> -->
+            <a-gltf-model src="#furnitureGLTF" color="green" scale=".01 .01 .01"></a-gltf-model>
             <a-obj-model src="#moulding"      color="#606060" scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#door"          color="#606060" scale=".01 .01 .01"></a-obj-model>
             <a-obj-model src="#topSectionHigh"color="white"   scale=".01 .01 .01"></a-obj-model>
@@ -113,97 +143,82 @@
         <div class="navpos"></div>
       </div>
     </div>
-    <div class="_2001spaceodysseycopydiv">
-      <div class="copyalldiv">
-        <div class="titlediv">
-          <div class="_3diotext">3d.io Presents</div>
-          <div class="projecttitletext">2001: A <span class="text-span"><em xmlns="http://www.w3.org/1999/xhtml">Space</em></span> Odyssey</div>
-        </div>
-        <div class="infocopyalldiv">
-          <div class="copytopdiv">
-            <div class="text-block-2">Stage your spaces on 3d.io for free!</div>
-          </div>
-          <div class="copymiddiv">
-            <div class="moveupcopy">
-              <div class="text-block-3">UPLOAD YOUR PLAN TO 3D.IO AND WE TAKE CARE OF THE REST!</div>
-              <div class="copygap"></div>
-              <div class="text-block-3">OUR PROPRIETARY ALGORITHM WILL BUILD YOUR WALLS, DOORS, AND WINDOWS</div>
-              <div class="copygap"></div>
-              <div class="text-block-3">QUICKLY FURNISH YOUR SPACE WITH OUR  GROWING FURNITURE LIBRARY</div>
-              <div class="copygap"></div>
-              <div class="text-block-3">DOWNLOAD YOUR MODEL OR EASILY SHOWCASE AND SHARE ON 3D.IO!</div>
-              <div class="copygap"></div>
-            </div>
-          </div>
-          <div class="copybottomdiv">
-            <div class="text-block-4">Take Me There!</div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 
   <script>
   //constant variables
-      const btns = document.querySelectorAll('.navbtn')
-      const btnRot = document.querySelector('.btnrot')
-      const towerEl = document.querySelector('#tower')
+    const btns = document.querySelectorAll('.navbtn')
+    const btnRot = document.querySelector('.btnrot')
+    const towerEl = document.querySelector('#tower')
+    const heroCopyEl = document.querySelector('.moveupcopy')
 
   //rotation functionality
-  const rots = [0, 90, 180, 270, 360]
-  var i = 0
+    const rots = [0, 90, 180, 270, 360]
+    var i = 0
 
-  btnRot.addEventListener('click',rotTower)
+    btnRot.addEventListener('click',rotTower)
 
-  function rotTower()
-  {
-    console.log("you rotated");
-    currentRot = rots[i]                //current rotation
-    console.log(currentRot);
-    i++                                 //moves the rot value
-
-    if (i==rots.length){i = 0; currentRot=i; i++; newRot = rots[i]}
-    if(i<rots.length){newRot = rots[i]}
-
-    console.log(newRot);
-    const rotParams = `property: rotation; from:0 ${currentRot} 0; to: 0 ${newRot} 0; dur: 2000; easing: easeInOutQuad`
-    towerEl.removeAttribute('animation')
-    towerEl.setAttribute('animation', rotParams)
-  }
+    function rotTower()
+    {
+      console.log("you rotated");
+      currentRot = rots[i]                //current rotation
+      console.log(currentRot);
+      i++                                 //moves the rot value
+      if (i==rots.length){i = 0; currentRot=i; i++; newRot = rots[i]}
+      if(i<rots.length){newRot = rots[i]}
+      console.log(newRot);
+      const rotParams = `property: rotation; from:0 ${currentRot} 0; to: 0 ${newRot} 0; dur: 2000; easing: easeInOutQuad`
+      towerEl.removeAttribute('animation')
+      towerEl.setAttribute('animation', rotParams)
+    }
 
 //move functionality
-      const levels = [
-        {lvl: 'lvl1', y: 0},
-        {lvl: 'lvl2', y: 30},
-        {lvl: 'lvl3', y: 60},
-      ]
-      let level = 0
-      const lMin = 0
-      const lMax = levels.length - 1
-      //initial movement
-      move(0)
-      //bindings
-      btns.forEach(btn => {
-        btn.addEventListener('click', function(evt) {
-          console.log(evt.target.id)
-          delta = evt.target.id === 'up' ? -1 : 1
-          move(delta)
-        })
+    //hero copy
+    const heroPos = ["0px", "-360px", "-720px"]
+    const levels = [
+      {lvl: 'lvl1', y: 0},
+      {lvl: 'lvl2', y: 30},
+      {lvl: 'lvl3', y: 60},
+    ]
+    let yPos = 0
+    const yMin = 0
+    const yMax = heroPos.length
+    let level = 0
+    const lMin = 0
+    const lMax = levels.length - 1
+    //initial movement
+    move(0)
+    //bindings
+    btns.forEach(btn => {
+      btn.addEventListener('click', function(evt) {
+        console.log(evt.target.id)
+        delta = evt.target.id === 'up' ? -1 : 1
+        move(delta)
+        heromove(delta)
       })
-      function move(delta){
-        console.log("you moved")
-          const yOld = levels[level].y
-          //prevent moving out of the scope
-          if (level + delta > lMax || level + delta < lMin) return
-          level += delta
-          const yNew = levels[level].y
-          //applies move either up or down
-          const moveParams = `property: position; from:0 ${yOld} 0; to: 0 ${yNew} 0; dur: 3000; easing: easeInOutQuad`
-          towerEl.removeAttribute('animation')
-          towerEl.setAttribute('animation', moveParams)
-      }
-    </script>
+    })
+    function heromove(delta){
+      console.log("hero text move")
+      const yOld = heroPos[yPos]
+      if (yPos + delta > yMax || yPos + delta < yMin) return
+      yPos += delta
+      const yNew = heroPos[yPos]
+      heroCopyEl.style.top = yNew
+    }
+    function move(delta){
+      console.log("you moved")
+        const yOld = levels[level].y
+        //prevent moving out of the scope
+        if (level + delta > lMax || level + delta < lMin) return
+        level += delta
+        const yNew = levels[level].y
+        //applies move either up or down
+        const moveParams = `property: position; from:0 ${yOld} 0; to: 0 ${yNew} 0; dur: 3000; easing: easeInOutQuad`
+        towerEl.removeAttribute('animation')
+        towerEl.setAttribute('animation', moveParams)
+    }
+  </script>
 
 </body>
 </html>

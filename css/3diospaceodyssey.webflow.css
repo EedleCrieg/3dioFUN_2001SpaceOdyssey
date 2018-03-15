@@ -1,3 +1,18 @@
+#borderAll{
+  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  border-style: solid;
+  border-color: white;
+  border-width: 10px;
+  z-index: 1;
+  position: fixed;
+  pointer-events: none;
+}
+
 /* Aframe embedded style */
 a-scene{
   width: 70vw;
@@ -7,6 +22,8 @@ a-scene{
   right: 0px;
   z-index: -1;
 }
+
+
 
 /*div styles */
 
@@ -196,6 +213,7 @@ a-scene{
   width: 50px;
   margin-left: 40px;
   float: left;
+  z-index: 2;
 }
 
 .button {
@@ -204,6 +222,7 @@ a-scene{
   clear: left;
   border: 1px solid #fff;
   background-color: transparent;
+
 }
 
 .button:hover {

@@ -23,11 +23,10 @@ a-scene{
   z-index: -1;
 }
 
-
-
 /*div styles */
 
 .navbtn{
+  z-index: 2;
 }
 .rotbtn{
 }
@@ -327,17 +326,20 @@ a-scene{
 
 .cta-main-div {
   position: relative;
+  opacity: 0;
 }
 
 .black-overlay {
   position: absolute;
   top: -40vh;
+  left: -100px;
   z-index: -1;
-  width: 100%;
+  width: 150%;
   height: 100vh;
   padding-right: 0px;
-  background-color: black;
-  opacity: .5;
+  background-color: #0f1110;;
+  /* background-color: #0f1110; */
+  opacity: .6;
 }
 
 @media (max-width: 479px) {

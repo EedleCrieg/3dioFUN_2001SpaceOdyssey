@@ -269,6 +269,77 @@ a-scene{
   top: 0px;
 }
 
+.div-block-6 {
+  position: absolute;
+  display: block;
+  width: 100vh;
+  height: 20px;
+}
+
+.cta-button {
+  display: block;
+  width: auto;
+  height: 100%;
+  margin: 0px;
+  padding-top: 23px;
+  padding-bottom: 15px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px none #fff;
+  background-color: #06ce6a;
+  font-family: Exo, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.cta-btn-border-div {
+  height: 100px;
+  padding: 15px;
+  border: 1px solid #fff;
+}
+
+.cta-btn-divider {
+  height: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-bottom: 0px;
+  border-bottom: 1px none #fff;
+  background-color: transparent;
+}
+
+.cta-btn-divider.top {
+  height: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px none #fff;
+  background-color: transparent;
+}
+
+.column {
+  padding-right: 0px;
+  padding-left: 0px;
+  border-top: 1px none #000;
+}
+
+.cta-main-div {
+  position: relative;
+}
+
+.black-overlay {
+  position: absolute;
+  top: -40vh;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  padding-right: 0px;
+  background-color: black;
+  opacity: .5;
+}
+
 @media (max-width: 479px) {
   .copyalldiv {
     margin-right: 40px;

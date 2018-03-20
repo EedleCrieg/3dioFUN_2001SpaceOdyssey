@@ -72,76 +72,79 @@
         <!-- Assets-->
         <a-assets>
           <!-- Floors Models -->
-          <a-asset-item id="floor"        src="obj/floor.obj"></a-asset-item>
-          <a-asset-item id="floorLights"  src="obj/floorLights.obj"></a-asset-item>
-          <a-asset-item id="wallSmall"    src="obj/wallSmall.obj"></a-asset-item>
-          <a-asset-item id="wallDetailed" src="obj/wallDetailed.obj"></a-asset-item>
-          <a-asset-item id="moulding"     src="obj/moulding.obj"></a-asset-item>
-          <a-asset-item id="door"         src="obj/door.obj"></a-asset-item>
-          <a-asset-item id="topSectionLow"src="obj/topSectionLow.obj"></a-asset-item>
-          <a-asset-item id="topSectionHigh"src="obj/topSectionHigh.obj"></a-asset-item>
-          <a-asset-item id="wallsWire"    src="obj/wallsWire.obj"></a-asset-item>
-          <a-asset-item id="tableWire"    src="obj/tableWire.obj"></a-asset-item>
-          <a-asset-item id="furniture"    src="obj/furniture.obj"></a-asset-item>
           <a-asset-item id="macbookPro"   src="obj/macbookPro.obj"></a-asset-item>
-
-          <a-asset-item id="testingOBJ"   src="obj/TestingOBJ.obj"></a-asset-item>
-          <a-asset-item id="colorTest"    src="images/testTex.png"></a-asset-item>
-
-          <a-asset-item id="planFloor"    src="obj/planfloor.obj"></a-asset-item>
-          <a-asset-item id="planTex"src="images/plantex.png"></a-aset-item>
-
-          <a-asset-item id="furnitureGLTF" src="obj/furniture.glb"></a-asset-item>
-
         </a-assets>
 
         <!-- Floor Geometry -->
         <a-entity id="tower" position="0 0 0" rotation="0 0 0">
           <a-entity id="level2" position="-1 -60 -1" rotation="0 180 0">
-            <a-obj-model src="#floor"         color="gray"    scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#floorLights"   color="white"   scale=".01 .01 .01" ></a-obj-model>
-            <a-obj-model src="#wallDetailed"  color="white"   scale=".01 .01 .01"></a-obj-model>
-            <!--<a-obj-model src="#furniture"     color="#9fa960" scale=".01 .01 .01"></a-obj-model> -->
-            <a-gltf-model src="#furnitureGLTF" color="green" scale=".01 .01 .01"></a-gltf-model>
-            <a-obj-model src="#moulding"      color="#606060" scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#door"          color="#606060" scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#topSectionHigh"color="white"   scale=".01 .01 .01"></a-obj-model>
+            <!-- Floor Plan -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180315-1353-021104/4bf445d9-02a0-4f4e-9d23-28d85754094e.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+            <!-- Enclosure -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180315-1354-0yd624/587c1891-03a7-4bfb-8ba9-4b6acacbf071.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+            <!-- macbookPro -->
             <a-obj-model src="#macbookPro"    color="grey"    scale=".01 .01 .01"></a-obj-model>
+            <!-- Top Section -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180315-1357-zbg84z/3a1d0f8a-6561-418a-ab5c-97e1dd684932.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+            <!-- Furniture -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180315-1356-gsrxpj/9e350047-b184-4b1e-99b3-0c16c2f4357b.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+
           </a-entity>
 
           <a-entity id="level2" position="-1 -30 -1" rotation="0 180 0">
-            <a-obj-model src="#floor"         color="gray"    scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#floorLights"   color="white"   scale=".01 .01 .01" ></a-obj-model>
-            <a-obj-model src="#wallDetailed"  color="white"   scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#moulding"      color="#606060" scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#door"          color="#606060" scale=".01 .01 .01"></a-obj-model>
+            <!-- Floor Plan -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180315-1353-021104/4bf445d9-02a0-4f4e-9d23-28d85754094e.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+            <!-- Enclosure -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180315-1354-0yd624/587c1891-03a7-4bfb-8ba9-4b6acacbf071.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+            <!-- macbookPro -->
             <a-obj-model src="#macbookPro"    color="grey"    scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#topSectionHigh"color="black"   scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#tableWire"     color="#10109f"   scale=".01 .01 .01" material="wireframe: true; wireframeLinewidth: 6"></a-obj-model>
+            <!-- Top Section -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180315-1357-zbg84z/3a1d0f8a-6561-418a-ab5c-97e1dd684932.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+            <!-- Wire Table -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180320-1010-x4d6tw/09c812d6-9076-41ba-9845-5ecbb1d42490.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+
           </a-entity>
 
           <a-entity id="level1" position="-1 0 -1" rotation="0 180 0">
-            <a-obj-model src="#planFloor"     color="blue" scale=".01 .01 .01"></a-obj-model>
+            <!-- Floor Plan -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180315-1353-021104/4bf445d9-02a0-4f4e-9d23-28d85754094e.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+            <!-- macbookPro -->
             <a-obj-model src="#macbookPro"    color="grey"    scale=".01 .01 .01"></a-obj-model>
-            <a-obj-model src="#wallsWire"     color="#10109f"   scale=".01 .01 .01" material="wireframe: true"></a-obj-model>
-            <a-obj-model src="#tableWire"     color="#10109f"   scale=".01 .01 .01" material="wireframe: true"></a-obj-model>
+            <!-- Wire Wall -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180320-1011-rcf04e/2a3e2fea-3093-4930-9240-5f16ed65fb4b.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+            <!-- Wire Table -->
+            <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180320-1010-x4d6tw/09c812d6-9076-41ba-9845-5ecbb1d42490.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
           </a-entity>
         </a-entity>
         <!-- Sky -->
         <a-sky color="#0f1110"></a-sky>
       </a-scene>
+      <!-- 3d Navigation -->
       <div class="aframenavspacer"></div>
-      <div class="allnavbuttondiv">
-        <a href="#" id="up" class="navbtn button up w-button">up</a>
-        <a href="#" id="down" class="navbtn button down w-button">dn</a>
-        <button id="rot" class="btnrot">rt</button>
-      </div>
-      <div class="navposall">
-        <div class="navpos"></div>
-        <div class="navpos"></div>
-        <div class="navpos"></div>
-        <div class="navpos"></div>
-      </div>
+      <div class="w-row">
+        <div class="w-clearfix w-col w-col-2">
+          <div class="allnavbuttondiv w-clearfix">
+            <a href="#" id="up" class="navbtn button up w-button">up</a>
+            <a href="#" id="down" class="navbtn button down w-button">dn</a>
+            <button id="rot" class="btnrot">rt</button>
+          </div>
+        </div>
+        <div class="column w-col w-col-8">
+          <div class="cta-main-div">
+            <div class="black-overlay"></div>
+            <div class="cta-btn-divider"></div>
+            <div class="cta-btn-border-div"><a href="https://io3d-floor-plan-app.herokuapp.com/" class="cta-button w-button">I&#x27;M READY TO UPLOAD MY PLAN</a></div>
+            <div class="cta-btn-divider"></div>
+          </div>
+        </div>
+        <div class="w-clearfix w-col w-col-2">
+          <div class="navposall">
+            <div class="navpos"></div>
+            <div class="navpos"></div>
+            <div class="navpos"></div>
+            <div class="navpos"></div>
+          </div>
+        </div>
     </div>
   </div>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->

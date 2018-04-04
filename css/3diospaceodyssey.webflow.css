@@ -331,11 +331,11 @@ a-scene{
 
 .black-overlay {
   position: absolute;
-  top: -40vh;
+  top: -50vh;
   left: -100px;
   z-index: -1;
   width: 150%;
-  height: 100vh;
+  height: 150vh;
   padding-right: 0px;
   background-color: #0f1110;;
   /* background-color: #0f1110; */

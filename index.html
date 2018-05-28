@@ -38,6 +38,14 @@
     </script>
   </head>
   <body class="body">
+    <script>
+      AFRAME.registerComponent('wireframe', {
+        dependencies: ['material'],
+        init: function () {
+          this.el.components.material.material.wireframe = true;
+        }
+      });
+    </script>
     <div class="maindiv">
       <div class="_2001spaceodysseycopydiv">
         <div class="copyalldiv">
@@ -49,6 +57,7 @@
             <div class="copytopdiv">
               <div class="text-block-2">Stage your spaces on 3d.io for free!</div>
             </div>
+
             <div class="copymiddiv">
               <div id="heroCopy" class="moveupcopy w-hidden-tiny">
                 <div class="herocopydiv">
@@ -173,6 +182,9 @@
           </div>
         </div>
       </div>
+
+
+
       <div class="aframe">
         <div class="aframe3d">
           <a-scene embedded cursor="rayOrigin: mouse" vr-mode-ui="enabled: false" >
@@ -218,14 +230,14 @@
                 <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180328-1204-ygvuj6/39a14dc2-ea31-48ba-bc1b-2e4e685909c0.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
                 <!-- Wire Table -->
                 <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180320-1010-x4d6tw/09c812d6-9076-41ba-9845-5ecbb1d42490.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
+
+              <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180328-1743-ktveet/700f7522-14b5-4879-9554-8f0efcfd2285.gz.data3d.buffer" ></a-entity>
               </a-entity>
-              <a-entity id="level1" position="-1 0 -1" rotation="0 180 0">
-                  <!-- Floor Plan -->
-                  <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180328-1129-bhrqnd/d95c0086-209d-4532-bc03-6c2a81432776.gz.data3d.buffer" scale=".01 .01 .01"></a-entity>
-                  <!-- Wire Wall -->
-                  <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180320-1011-rcf04e/2a3e2fea-3093-4930-9240-5f16ed65fb4b.gz.data3d.buffer" scale=".01 .01 .01" wireframe></a-entity>
-                  <!-- Wire Table -->
-                  <a-entity io3d-data3d="key:/3e6ab7a4-fb54-4e0f-94b2-b4a627072a28/180320-1010-x4d6tw/09c812d6-9076-41ba-9845-5ecbb1d42490.gz.data3d.buffer" scale=".01 .01 .01" wireframe></a-entity>
+              <a-entity id="level1" position="-1 0 -1" rotation="0  0">
+                <a-entity id="level1geo" position="12 0 1">
+                  <a-entity io3d-data3d="key: 535e624259ee6b0200000484/processing/2018-05-25_14-10-42_2AZ58q/lighting.gz.data3d.buffer; lightMapIntensity: 1.5; lightMapExposure: 0.78" shadow="cast: false; receive: true"></a-entity>
+                  <a-entity io3d-object="" io3d-data3d="key: /535e624259ee6b0200000484/180525-1146-wtzjyz/2257fcc3-60a7-48e9-9574-9bc30e49b542.gz.data3d.buffer" shadow="cast: true; receive: true" visible="false" position="0 0 0" rotation="0 0 0" io3d-uuid="0b607782-17d2-43c6-8122-2af90464c67c"></a-entity>                  <!-- Floor Plan -->
+                </a-entity>
               </a-entity>
             </a-entity>
             <!-- Sky -->
